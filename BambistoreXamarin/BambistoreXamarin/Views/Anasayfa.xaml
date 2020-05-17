@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BambistoreXamarin.Views.Anasayfa">
+    <ContentPage.Content>
+        <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <d:RowDefinition Height="50"/>
+                <d:RowDefinition Height="10"/>
+                <d:RowDefinition/>
+                <d:RowDefinition/>
+                <d:RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <d:ColumnDefinition/>
+                    <d:ColumnDefinition/>
+                    <d:ColumnDefinition/>
+                    <d:ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" ImageSource="https://www.bambistore.com.tr/Uploads/UrunResimleri/thumb/siyah-kadin-bot-l0503520022-7258.jpg"  Style="{StaticResource yuvarlakbuton}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                </Button>
+                <Button Grid.Column="1" ImageSource="https://www.bambistore.com.tr/Uploads/UrunResimleri/buyuk/siyahbeyaz-sneakers-k0510005609-c722.jpg" Style="{StaticResource yuvarlakbuton}" HorizontalOptions="Fill" VerticalOptions="Fill"></Button>
+                <Button Grid.Column="2" ImageSource="https://www.bambistore.com.tr/Uploads/UrunResimleri/buyuk/lacivert-kadin-postaci-canta-l3612000209-01b8.jpg" Style="{StaticResource yuvarlakbuton}" HorizontalOptions="Fill" VerticalOptions="Fill"></Button>
+                <Button Grid.Column="3" ImageSource="https://www.bambistore.com.tr/Uploads/UrunResimleri/thumb/bej-kadin-comfort-l0501100209-e7fb.jpg" Style="{StaticResource yuvarlakbuton}" HorizontalOptions="Fill" VerticalOptions="Fill"></Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <d:ColumnDefinition/>
+                    <d:ColumnDefinition/>
+                    <d:ColumnDefinition/>
+                    <d:ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Kışı Bitiriyioruz"/>
+                <Label Grid.Column="1" Text="Sneakers"/>
+                <Label Grid.Column="2" Text="Çanta Ve Aksesuar"/>
+                <Label Grid.Column="3" Text="Ev Rahatlığı"/>
+            </Grid>
+            <!-- Slide-->
+                <Grid Grid.Row="2">
+                    <CarouselView x:Name="CarouseSlide" >
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <ImageButton Source="{Binding .}"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <d:RowDefinition/>
+                        <d:RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" ImageSource="https://www.bambistore.com.tr/Uploads/Slider/kadin-yeni-sezon-ss20-209.jpg?t=20200512155012" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                    <Button Grid.Row="1" ImageSource="https://www.bambistore.com.tr/Uploads/Slider/erkek-yeni-sezon-210.jpg?t=20200512155021" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                </Grid>
+        </Grid>
+            
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
