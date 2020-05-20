@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BambistoreXamarin.Android",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BambistoreXamarin.iOS", "BambistoreXamarin\BambistoreXamarin.iOS\BambistoreXamarin.iOS.csproj", "{AE250545-39A6-48B0-B4DD-305640569EA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BambistoreXamarin", "BambistoreXamarin\BambistoreXamarin\BambistoreXamarin.csproj", "{24431B3F-CDD5-477C-8616-6928470E6213}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BambistoreXamarin", "BambistoreXamarin\BambistoreXamarin\BambistoreXamarin.csproj", "{24431B3F-CDD5-477C-8616-6928470E6213}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

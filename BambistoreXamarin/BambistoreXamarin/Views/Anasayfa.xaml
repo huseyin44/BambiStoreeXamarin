@@ -2,47 +2,110 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sflistview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:BambistoreXamarin"
              mc:Ignorable="d"
              x:Class="BambistoreXamarin.Views.Anasayfa">
     <ContentPage.Content>
-        <ScrollView>
-        <Grid>
-            <Grid.RowDefinitions>
-                <d:RowDefinition Height="50"/>
-                <d:RowDefinition Height="10"/>
-                <d:RowDefinition/>
-                <d:RowDefinition/>
-                <d:RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <d:ColumnDefinition/>
-                    <d:ColumnDefinition/>
-                    <d:ColumnDefinition/>
-                    <d:ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" ImageSource="https://www.bambistore.com.tr/Uploads/UrunResimleri/thumb/siyah-kadin-bot-l0503520022-7258.jpg"  Style="{StaticResource yuvarlakbuton}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                </Button>
-                <Button Grid.Column="1" ImageSource="https://www.bambistore.com.tr/Uploads/UrunResimleri/buyuk/siyahbeyaz-sneakers-k0510005609-c722.jpg" Style="{StaticResource yuvarlakbuton}" HorizontalOptions="Fill" VerticalOptions="Fill"></Button>
-                <Button Grid.Column="2" ImageSource="https://www.bambistore.com.tr/Uploads/UrunResimleri/buyuk/lacivert-kadin-postaci-canta-l3612000209-01b8.jpg" Style="{StaticResource yuvarlakbuton}" HorizontalOptions="Fill" VerticalOptions="Fill"></Button>
-                <Button Grid.Column="3" ImageSource="https://www.bambistore.com.tr/Uploads/UrunResimleri/thumb/bej-kadin-comfort-l0501100209-e7fb.jpg" Style="{StaticResource yuvarlakbuton}" HorizontalOptions="Fill" VerticalOptions="Fill"></Button>
-            </Grid>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <d:ColumnDefinition/>
-                    <d:ColumnDefinition/>
-                    <d:ColumnDefinition/>
-                    <d:ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Text="Kışı Bitiriyioruz"/>
-                <Label Grid.Column="1" Text="Sneakers"/>
-                <Label Grid.Column="2" Text="Çanta Ve Aksesuar"/>
-                <Label Grid.Column="3" Text="Ev Rahatlığı"/>
-            </Grid>
-            <!-- Slide-->
-                <Grid Grid.Row="2">
-                    <CarouselView x:Name="CarouseSlide" >
+        <ScrollView  >
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="700"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="350"/>
+                    <RowDefinition Height="350"/>
+                    <RowDefinition Height="350"/>
+                    <RowDefinition Height="350"/>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="220"/>
+                    <RowDefinition Height="400"/>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" Source="https://www.bambistore.com.tr/Uploads/UrunResimleri/thumb/siyah-kadin-bot-l0503520022-7258.jpg" Aspect="Fill" CornerRadius="80" BorderColor="LightGray" BorderWidth="1" />
+                    <ImageButton Grid.Column="1" Source="https://bambistore-img.ticimaxcdn.com/Uploads/UrunResimleri/thumb/fusyalila-sneakers-k0503900217-ea37.jpg" Aspect="Fill" CornerRadius="80" BorderColor="LightGray" BorderWidth="1" />
+                    <ImageButton Grid.Column="2" Source="https://bambistore-img.ticimaxcdn.com/Uploads/UrunResimleri/thumb/a.vizon-kadin-postaci-canta-l3612000209-aeb3.jpg" Aspect="Fill" CornerRadius="80" BorderColor="LightGray" BorderWidth="1" />
+                    <ImageButton Grid.Column="3" Source="https://bambistore-img.ticimaxcdn.com/Uploads/UrunResimleri/thumb/siyah-kadin-comfort-l0501134209-d3ff.jpg" Aspect="Fill" CornerRadius="80" BorderColor="LightGray" BorderWidth="1" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Kışı Bitiriyioruz" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Sneakers" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+                    <Label Grid.Column="2" Text="Çanta Ve Aksesuar" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+                    <Label Grid.Column="3" Text="Ev Rahatlığı" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+                </Grid>
+                <!-- Slide-->
+                <Grid Grid.Row="2" >
+                    <CarouselView x:Name="CarouseSlide" HeightRequest="200">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout >
+                                    <ImageButton Source="{Binding .}"  Aspect="Fill" HeightRequest="200"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ImageButton Grid.Row="0" Source="https://www.bambistore.com.tr/Uploads/Slider/kadin-yeni-sezon-ss20-209.jpg?t=20200512155012" Aspect="Fill"/>
+                    <ImageButton Grid.Row="1" Source="https://www.bambistore.com.tr/Uploads/Slider/erkek-yeni-sezon-210.jpg?t=20200512155021" Aspect="Fill" />
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0">
+                        <Label  Text="KADIN ÜRÜNLERİ" x:Name="Textkdn" VerticalOptions="Center" HorizontalOptions="End">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CarouselKadin"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2">
+                        <Label  Text="ERKEK ÜRÜNLERİ" x:Name="Texterk" VerticalOptions="Center" HorizontalOptions="Start">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CarouselErkek"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </Grid>
+                <!-- Kadın ve Erkek Ürünleri-->
+                <Grid Grid.Row="5">
+                    <CarouselView x:Name="kadınurunleri" IsVisible="True"  >
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <ImageButton Source="{Binding .}"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <CarouselView x:Name="erkekurunleri" IsVisible="False" >
                         <CarouselView.ItemTemplate>
                             <DataTemplate>
                                 <StackLayout>
@@ -52,16 +115,104 @@
                         </CarouselView.ItemTemplate>
                     </CarouselView>
                 </Grid>
-                <Grid Grid.Row="3">
+                <Grid Grid.Row="6">
                     <Grid.RowDefinitions>
-                        <d:RowDefinition/>
-                        <d:RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Button Grid.Row="0" ImageSource="https://www.bambistore.com.tr/Uploads/Slider/kadin-yeni-sezon-ss20-209.jpg?t=20200512155012" HorizontalOptions="Fill" VerticalOptions="Fill"/>
-                    <Button Grid.Row="1" ImageSource="https://www.bambistore.com.tr/Uploads/Slider/erkek-yeni-sezon-210.jpg?t=20200512155021" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Label Grid.Row="0" x:Name="marka" Text="sadsda"/>
+                    <Label Grid.Row="1" x:Name="urunismi" Text="sadsda"/>
+                    <Label Grid.Row="2" x:Name="fiyat" Text="sadsda"/>
+                    <Label Grid.Row="3" x:Name="indirimlifiyat" Text="sadsda"/>
                 </Grid>
-        </Grid>
-            
+                <!-- Butonimage-->
+                <ImageButton Grid.Row="7" Source="https://www.bambistore.com.tr/Uploads/EditorUploads/1145x800px.jpg" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+                <ImageButton Grid.Row="8" Source="https://www.bambistore.com.tr/Uploads/EditorUploads/503x700%20px-2.jpg" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+                <ImageButton Grid.Row="9" Source="https://www.bambistore.com.tr/Uploads/EditorUploads/503x700%20px-3.jpg" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+                <ImageButton Grid.Row="10" Source="https://www.bambistore.com.tr/Uploads/EditorUploads/503x700%20px.jpg" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+                <!-- simgeler-->
+                <Grid Grid.Row="11">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="https://www.bambistore.com.tr/customcss/images/icon1.png" />
+                        <Label Grid.Row="1" Text="HIZLI KARGO" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Grid.Row="2" Text="İmkanı" TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="https://www.bambistore.com.tr/customcss/images/icon2.png" />
+                        <Label Grid.Row="1" Text="TÜRKİYE" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Grid.Row="2" Text="DİSTRBÜTÖRÜ" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Label Grid.Row="3" Text="Garantisi" TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="https://www.bambistore.com.tr/customcss/images/icon3.png" />
+                        <Label Grid.Row="1" Text="%100 ORJİNAL ÜRÜN" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Grid.Row="2" Text="Garantisi" TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="https://www.bambistore.com.tr/customcss/images/icon4.png" />
+                        <Label Grid.Row="1" Text="İADE VE DEĞİŞİM" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Grid.Row="2" Text="Garantisi" TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="https://www.bambistore.com.tr/customcss/images/icon5.png" />
+                        <Label Grid.Row="1" Text="KREDİ KARTINA" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Grid.Row="2" Text="9 Taksit" TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="13" BackgroundColor="LightGray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition />
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="BİZDEN HABER ALIN" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Grid.Row="1" Text="E-bültenimize kayıt olun, tüm indirim ve kampanyalardan" TextColor="Gray" FontSize="Small" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Grid.Row="2" Text="haber alın!" TextColor="Gray" FontSize="Small" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Entry Grid.Row="3" Placeholder="E-posta adresinizi yazın..."  PlaceholderColor="Gray" Keyboard="Text" BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5,0.5,200,200" d:AbsoluteLayout.LayoutFlags="PositionProportional" ></Entry>
+                    <Button Grid.Row="4" Text="Gönder"  AbsoluteLayout.LayoutBounds="100,100,10,10" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Center" HorizontalOptions="Fill" BackgroundColor="LightGray" BorderWidth="1" BorderColor="Gray" TextColor="Gray"></Button>
+                </Grid>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
