@@ -55,6 +55,27 @@
     <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.10\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\syncfusion.licensing\18.1.0.53\lib\uap10.0\Syncfusion.Licensing.dll">
+      <PackagePath>Syncfusion.Licensing.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\syncfusion.xamarin.core\18.1.0.53\lib\uap10.0\Syncfusion.Core.XForms.UWP.dll">
+      <PackagePath>Syncfusion.Core.XForms.UWP.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\syncfusion.xamarin.core\18.1.0.53\lib\uap10.0\Syncfusion.Core.XForms.dll">
+      <PackagePath>Syncfusion.Core.XForms.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\syncfusion.xamarin.datasource\18.1.0.53\lib\uap10.0\Syncfusion.DataSource.Portable.dll">
+      <PackagePath>Syncfusion.DataSource.Portable.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\syncfusion.xamarin.gridcommon\18.1.0.53\lib\uap10.0\Syncfusion.GridCommon.Portable.dll">
+      <PackagePath>Syncfusion.GridCommon.Portable.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\syncfusion.xamarin.sflistview\18.1.0.53\lib\uap10.0\Syncfusion.SfListView.XForms.UWP.dll">
+      <PackagePath>Syncfusion.SfListView.XForms.UWP.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\syncfusion.xamarin.sflistview\18.1.0.53\lib\uap10.0\Syncfusion.SfListView.XForms.dll">
+      <PackagePath>Syncfusion.SfListView.XForms.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\system.runtime.compilerservices.unsafe\4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
       <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
     </AppxPackagedFile>
@@ -96,6 +117,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\syncfusion.xamarin.core\18.1.0.53\lib\uap10.0\Syncfusion.Core.XForms.UWP\Syncfusion.Core.XForms.UWP.xr.xml">
+      <PackagePath>Syncfusion.Core.XForms.UWP\Syncfusion.Core.XForms.UWP.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hüseyin\.nuget\packages\xamarin.forms\4.7.0.773-pre1\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>

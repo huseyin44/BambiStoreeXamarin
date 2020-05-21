@@ -3,31 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:sflistview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:BambistoreXamarin"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:BambistoreXamarin" xmlns:local1="clr-namespace:BambistoreXamarin.ViewModels"
              mc:Ignorable="d"
              x:Class="BambistoreXamarin.Views.Anasayfa">
+    <ContentPage.BindingContext>
+        <local1:MainListView/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView  >
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="170"/>
                     <RowDefinition Height="20"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="200"/>
                     <RowDefinition Height="700"/>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="250"/>
                     <RowDefinition Height="170"/>
                     <RowDefinition Height="350"/>
-                    <RowDefinition Height="350"/>
-                    <RowDefinition Height="350"/>
-                    <RowDefinition Height="350"/>
                     <RowDefinition Height="130"/>
                     <RowDefinition Height="130"/>
                     <RowDefinition Height="220"/>
-                    <RowDefinition Height="400"/>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
+                    <RowDefinition Height="220"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" >
                     <Grid.ColumnDefinitions>
@@ -55,15 +55,7 @@
                 </Grid>
                 <!-- Slide-->
                 <Grid Grid.Row="2" >
-                    <CarouselView x:Name="CarouseSlide" HeightRequest="200">
-                        <CarouselView.ItemTemplate>
-                            <DataTemplate>
-                                <StackLayout >
-                                    <ImageButton Source="{Binding .}"  Aspect="Fill" HeightRequest="200"/>
-                                </StackLayout>
-                            </DataTemplate>
-                        </CarouselView.ItemTemplate>
-                    </CarouselView>
+                    <ImageButton Source="https://bambistore-img.ticimaxcdn.com/Uploads/Slider/-211.jpg?t=20200430100335" Aspect="Fill"/>
                 </Grid>
                 <Grid Grid.Row="3">
                     <Grid.RowDefinitions>
@@ -129,11 +121,8 @@
                 </Grid>
                 <!-- Butonimage-->
                 <ImageButton Grid.Row="7" Source="https://www.bambistore.com.tr/Uploads/EditorUploads/1145x800px.jpg" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
-                <ImageButton Grid.Row="8" Source="https://www.bambistore.com.tr/Uploads/EditorUploads/503x700%20px-2.jpg" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
-                <ImageButton Grid.Row="9" Source="https://www.bambistore.com.tr/Uploads/EditorUploads/503x700%20px-3.jpg" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
-                <ImageButton Grid.Row="10" Source="https://www.bambistore.com.tr/Uploads/EditorUploads/503x700%20px.jpg" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
                 <!-- simgeler-->
-                <Grid Grid.Row="11">
+                <Grid Grid.Row="8">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -172,7 +161,7 @@
                         <Label Grid.Row="2" Text="Garantisi" TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Center"/>
                     </Grid>
                 </Grid>
-                <Grid Grid.Row="12">
+                <Grid Grid.Row="9">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -198,7 +187,7 @@
                         <Label Grid.Row="2" Text="9 Taksit" TextColor="Gray" VerticalOptions="Start" HorizontalOptions="Center"/>
                     </Grid>
                 </Grid>
-                <Grid Grid.Row="13" BackgroundColor="LightGray">
+                <Grid Grid.Row="10" BackgroundColor="LightGray">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="25"/>
@@ -212,6 +201,53 @@
                     <Entry Grid.Row="3" Placeholder="E-posta adresinizi yazın..."  PlaceholderColor="Gray" Keyboard="Text" BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5,0.5,200,200" d:AbsoluteLayout.LayoutFlags="PositionProportional" ></Entry>
                     <Button Grid.Row="4" Text="Gönder"  AbsoluteLayout.LayoutBounds="100,100,10,10" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Center" HorizontalOptions="Fill" BackgroundColor="LightGray" BorderWidth="1" BorderColor="Gray" TextColor="Gray"></Button>
                 </Grid>
+                <!-- ExplandListView-->
+                <Grid Grid.Row="11" BackgroundColor="White">
+                    <ListView  ItemTapped="ListViewItem_Tabbed" ItemsSource="{Binding Products}"  BackgroundColor="White">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell >
+                                    <StackLayout Padding="20" >
+                                        <Label  Text="{Binding Title}" TextColor="Black" HorizontalOptions="Center"/>
+                                        <StackLayout IsVisible="{Binding Isvisible}" Orientation="Vertical" >
+                                            <Button Text="{Binding Altbaslik}"  BackgroundColor="White" TextColor="Gray"/>
+                                            <Button Text="{Binding Altbaslik2}" BackgroundColor="White" TextColor="Gray"/>
+                                            <Button Text="{Binding Altbaslik3}" BackgroundColor="White" TextColor="Gray"/>
+                                            <Button Text="{Binding Altbaslik4}" BackgroundColor="White" TextColor="Gray" IsVisible="{Binding Vsblty}"/>
+                                            <Button Text="{Binding Altbaslik5}" BackgroundColor="White" TextColor="Gray" IsVisible="{Binding Vsblty2}"/>
+                                            <Button Text="{Binding Altbaslik6}" BackgroundColor="White" TextColor="Gray" IsVisible="{Binding Vsblty2}"/>
+                                            <Button Text="{Binding Altbaslik7}" BackgroundColor="White" TextColor="Gray" IsVisible="{Binding Vsblty2}"/>
+                                            <Button Text="{Binding Altbaslik8}" BackgroundColor="White" TextColor="Gray" IsVisible="{Binding Vsblty2}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+                <!-- küçükbutonlar-->
+                <Grid Grid.Row="12" VerticalOptions="StartAndExpand" HorizontalOptions="Center" AbsoluteLayout.LayoutFlags="All" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  AbsoluteLayout.LayoutFlags="All"/>
+                        <ColumnDefinition AbsoluteLayout.LayoutFlags="All"/>
+                        <ColumnDefinition Width="80" AbsoluteLayout.LayoutFlags="All"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"  Source="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Places-mail-message-icon.png" HeightRequest="15" AbsoluteLayout.LayoutFlags="All" VerticalOptions="Center" HorizontalOptions="End"/>
+                    <Label Grid.Column="1" Text="destek@bambistore.com.tr" TextColor="Gray" HorizontalOptions="Start" AbsoluteLayout.LayoutFlags="All"/>
+                </Grid>
+                <Grid Grid.Row="13" VerticalOptions="StartAndExpand" HorizontalOptions="Center" AbsoluteLayout.LayoutFlags="All" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  AbsoluteLayout.LayoutFlags="All"/>
+                        <ColumnDefinition AbsoluteLayout.LayoutFlags="All"/>
+                        <ColumnDefinition Width="40" AbsoluteLayout.LayoutFlags="All"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"  Source="http://icons.iconarchive.com/icons/icons8/ios7/256/Mobile-Phone-1-icon.png" HeightRequest="15" AbsoluteLayout.LayoutFlags="All"  HorizontalOptions="End"/>
+                    <Label Grid.Column="1" Text="0850 200 3 500" TextColor="Gray" HorizontalOptions="Start" AbsoluteLayout.LayoutFlags="All"/>
+                </Grid>
+                <Grid Grid.Row="14">
+                    <Label Text="COPYRIGHT 2020 bambistore.com.tr" TextColor="Gray" HorizontalOptions="Center" FontSize="14" Margin="40,0,0,0"/>
+                </Grid>
+                
             </Grid>
         </ScrollView>
     </ContentPage.Content>

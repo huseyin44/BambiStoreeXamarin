@@ -1,4 +1,8 @@
-﻿using ImageCircle.Forms.Plugin.Abstractions;
+﻿using Android.Opengl;
+using Android.OS;
+using Android.Provider;
+using BambistoreXamarin.ViewModels;
+using ImageCircle.Forms.Plugin.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +11,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Markup;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace BambistoreXamarin.Views
@@ -16,14 +21,7 @@ namespace BambistoreXamarin.Views
     {
         public Anasayfa()
         {
-            InitializeComponent();
-            List<string> slide = new List<string>()
-            {
-                "https://www.bambistore.com.tr/Uploads/Slider/kadin-yeni-sezon-ss20-209.jpg?t=20200512155012",
-                "https://www.bambistore.com.tr/Uploads/Slider/erkek-yeni-sezon-210.jpg?t=20200512155021"
-            };
-            CarouseSlide.ItemsSource = slide;
-            Textkdn.TextDecorations = TextDecorations.Underline;
+            InitializeComponent();          
         }
     
        private async void CarouselKadin(object sender, EventArgs e)
@@ -40,6 +38,11 @@ namespace BambistoreXamarin.Views
             kadınurunleri.IsVisible = false;
             erkekurunleri.IsVisible = true;
         }
-     
+        private void ListViewItem_Tabbed(object sender, ItemTappedEventArgs e)
+        {
+            var product = e.Item as Product;
+            var vm = BindingContext as MainListView;
+            vm?.ShoworHiddenProducts(product);
+        }
     }
 }
